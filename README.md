@@ -18,6 +18,12 @@
   <br/>
   
 </details>
+<details>
+  <summary>Phantom Read</summary>
+  <br/>
+  
+</details>
+
 
 ## Indexing
 ## Joins
