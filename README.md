@@ -8,6 +8,11 @@
   + Isolation determines how data integrity is visible to other transactions. It’s based on the Isolation Level.
   
 </details>
+<details>
+  <summary>Dirty read</summary>
+  <br/>
+  
+</details>
 
 ## Indexing
 ## Joins
