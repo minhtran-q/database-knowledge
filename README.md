@@ -13,6 +13,11 @@
   <br/>
   
 </details>
+<details>
+  <summary>Non-repeatable</summary>
+  <br/>
+  
+</details>
 
 ## Indexing
 ## Joins
