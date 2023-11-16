@@ -23,7 +23,11 @@
   <br/>
   
 </details>
-
+<details>
+  <summary>Seriablizable Anomaly</summary>
+  <br/>
+  
+</details>
 
 ## Indexing
 ## Joins
