@@ -17,3 +17,5 @@
 + Script used to identify missing indexes
   
 </details>
+
+#### Avoid SQL injection
