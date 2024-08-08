@@ -1,1 +1,1 @@
-# sql-knowledge
+# SQL Knowledge
