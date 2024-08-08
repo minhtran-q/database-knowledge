@@ -1,1 +1,2 @@
 # SQL Knowledge
+## Optimize performance
