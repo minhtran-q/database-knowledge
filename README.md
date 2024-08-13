@@ -42,3 +42,9 @@
   <br/>
   
 </details>
+
+<details>
+  <summary>Avoid Function on the WHERE clause</summary>
+  <br/>
+  
+</details>
