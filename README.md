@@ -68,3 +68,8 @@
   <br/>
   
 </details>
+<details>
+  <summary>View vs Stored procedure</summary>
+  <br/>
+  
+</details>
