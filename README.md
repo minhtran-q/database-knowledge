@@ -58,3 +58,8 @@
   <br/>
   
 </details>
+<details>
+  <summary>Use Union ALL instead of Union</summary>
+  <br/>
+  
+</details>
