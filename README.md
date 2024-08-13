@@ -53,3 +53,8 @@
   <br/>
   
 </details>
+<details>
+  <summary>Use EXISTS over COUNT(*) to check if data exists</summary>
+  <br/>
+  
+</details>
