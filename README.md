@@ -59,7 +59,7 @@
   
 </details>
 <details>
-  <summary>Use Union ALL instead of Union</summary>
+  <summary>Use UNION ALL instead of UNION</summary>
   <br/>
   
 </details>
