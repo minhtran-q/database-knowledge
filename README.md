@@ -36,3 +36,9 @@
   <br/>
   
 </details>
+
+<details>
+  <summary>Avoid arithmetic operators in the WHERE clause</summary>
+  <br/>
+  
+</details>
