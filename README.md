@@ -48,3 +48,8 @@
   <br/>
   
 </details>
+<details>
+  <summary>use JOINS instead of Subqueries</summary>
+  <br/>
+  
+</details>
