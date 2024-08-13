@@ -63,3 +63,8 @@
   <br/>
   
 </details>
+<details>
+  <summary>Avoid using cursor</summary>
+  <br/>
+  
+</details>
