@@ -49,7 +49,7 @@
   
 </details>
 <details>
-  <summary>use JOINS instead of Subqueries</summary>
+  <summary>Use JOINS instead of Subqueries</summary>
   <br/>
   
 </details>
