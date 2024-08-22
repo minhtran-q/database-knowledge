@@ -92,7 +92,16 @@
   **Explicit Locking:** Manually acquiring and releasing locks using commands like `SELECT FOR UPDATE` and `SELECT FOR SHARE`.
 
   **Implicit Locking:** PostgreSQL automatically acquires and releases locks based on operations or queries performed.
+
+  _Example:_
+
+  ```
+  -- Acquire an exclusive lock on a row:
+  SELECT * FROM users WHERE user_id = 1 FOR UPDATE;
   
+  -- Acquire a shared lock on a row:
+  SELECT * FROM users WHERE user_id = 1 FOR SHARE;
+  ```
 </details>
 
 ### Table lock
