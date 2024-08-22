@@ -75,8 +75,6 @@
 </details>
 
 ## Locks in SQL - A deep dive
-### Table lock
-https://postgres-locks.husseinnasser.com/
 <details>
   <summary>How Locks Work in PostgreSQL</summary>
   <br/>
@@ -87,6 +85,8 @@ https://postgres-locks.husseinnasser.com/
   
 </details>
 
+### Table lock
+https://postgres-locks.husseinnasser.com/
 <details>
   <summary>Type of locks</summary>
   <br/>
