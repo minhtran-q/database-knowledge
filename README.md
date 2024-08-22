@@ -85,6 +85,27 @@ https://postgres-locks.husseinnasser.com/
   
 </details>
 
+<details>
+  <summary>Type of locks</summary>
+  <br/>
+
+  <details>
+  <summary>How Locks Work in PostgreSQL</summary>
+  <br/>
+
+  + AccessShareLock
+  + RowShareLock
+  + RowExclusiveLock
+  + ShareUpdateExclusiveLock
+  + ShareLock
+  + ShareRowExclusiveLock
+  + ExclusiveLock
+  + AccessExclusiveLock
+  
+</details>
+  
+</details>
+
 ### Row locks
 ### Page locks
 ### Dead locks
