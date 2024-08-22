@@ -89,10 +89,6 @@ https://postgres-locks.husseinnasser.com/
   <summary>Type of locks</summary>
   <br/>
 
-  <details>
-  <summary>How Locks Work in PostgreSQL</summary>
-  <br/>
-
   + AccessShareLock
   + RowShareLock
   + RowExclusiveLock
@@ -101,8 +97,6 @@ https://postgres-locks.husseinnasser.com/
   + ShareRowExclusiveLock
   + ExclusiveLock
   + AccessExclusiveLock
-  
-</details>
   
 </details>
 
