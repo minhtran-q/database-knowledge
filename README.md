@@ -85,6 +85,16 @@
   
 </details>
 
+<details>
+  <summary>Locking Mechanisms:</summary>
+  <br/>
+
+  **Explicit Locking:** Manually acquiring and releasing locks using commands like `SELECT FOR UPDATE` and `SELECT FOR SHARE`.
+
+  **Implicit Locking:** PostgreSQL automatically acquires and releases locks based on operations or queries performed.
+  
+</details>
+
 ### Table lock
 https://postgres-locks.husseinnasser.com/
 <details>
@@ -107,6 +117,14 @@ https://postgres-locks.husseinnasser.com/
   + ShareRowExclusiveLock
   + ExclusiveLock
   + AccessExclusiveLock
+  
+</details>
+
+<details>
+  <summary>Examples</summary>
+  <br/>
+
+  
   
 </details>
 
