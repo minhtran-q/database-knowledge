@@ -75,3 +75,11 @@
 </details>
 
 ## Table locks - A deep dive
+
+<details>
+  <summary>How Locks Work in PostgreSQL</summary>
+  <br/>
+
+  In PostgreSQL, locks are acquired automatically by the database system whenever a transaction accesses or modified.
+  
+</details>
