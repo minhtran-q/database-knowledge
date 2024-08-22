@@ -73,4 +73,5 @@
   <br/>
   
 </details>
+
 ## Table locks - A deep dive
