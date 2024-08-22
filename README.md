@@ -88,6 +88,14 @@
 ### Table lock
 https://postgres-locks.husseinnasser.com/
 <details>
+  <summary>Table level lock</summary>
+  <br/>
+
+  Table locks apply to entire tables and are used to prevent other transactions from accessing the table in conflicting ways.
+  
+</details>
+
+<details>
   <summary>Type of locks</summary>
   <br/>
 
@@ -107,7 +115,7 @@ https://postgres-locks.husseinnasser.com/
   <summary>Row level lock</summary>
   <br/>
 
-  These locks apply to individual rows within a table. They are used to prevent other transactions from modifying or deleting specific rows while they are being accessed.
+  Row locks apply to individual rows within a table. They are used to prevent other transactions from modifying or deleting specific rows while they are being accessed.
   
 </details>
 
@@ -123,4 +131,7 @@ https://postgres-locks.husseinnasser.com/
 </details>
 
 ### Page locks
+
+
+
 ### Dead locks
