@@ -6,7 +6,7 @@
   <summary>Understand how sql run</summary>
   <br/>
 
-   [](/images/order_of_sql.png)
+   ![order_of_sql](/images/order_of_sql.png)
   
 </details>
 
