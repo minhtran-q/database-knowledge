@@ -167,6 +167,14 @@ https://postgres-locks.husseinnasser.com/
   + FOR SHARE
   + FOR NO KEY UPDATE
   + FOR UPDATE
+
+  **Conflict Modes in Row Level Locks**:
+  |                   | FOR KEY SHARE | FOR SHARE | FOR NO KEY UPDATE | FOR UPDATE |
+  |-------------------|---------------|-----------|-------------------|------------|
+  | FOR KEY SHARE     |               |           |                   |      X     |
+  | FOR SHARE         |               |           |         X         |      X     |
+  | FOR NO KEY UPDATE |               |     X     |         X         |      X     |
+  | FOR UPDATE        |       X       |     X     |         X         |      X     |
   
 </details>
 
