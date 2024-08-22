@@ -133,7 +133,20 @@ https://postgres-locks.husseinnasser.com/
   <summary>Examples</summary>
   <br/>
 
-  
+  AccessShareLock:
+  ```
+  begin;
+  lock table Email IN ACCESS SHARE MODE;
+  select * from Email;
+  ```
+  _The lock is acquired on a specific table via the PostgreSQL SELECT command. After acquiring the lock on the table, we are only able to read data from it and not able to edit it._
+
+  AccessExclusiveLock:
+  ```
+  begin;
+  lock table Email IN ACCESS EXCLUSIVE MODE;
+  ```
+  _Only the person who applied the lock to the table can access it when utilizing it._
   
 </details>
 
