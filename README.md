@@ -104,8 +104,9 @@
   ```
 </details>
 
-### Table lock
 https://postgres-locks.husseinnasser.com/
+
+### Table lock
 <details>
   <summary>Table level lock</summary>
   <br/>
