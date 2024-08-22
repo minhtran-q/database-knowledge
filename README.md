@@ -84,6 +84,7 @@ https://postgres-locks.husseinnasser.com/
   In PostgreSQL, locks are acquired automatically by the database system whenever a transaction accesses or modified.
   
 </details>
+
 ### Row locks
 ### Page locks
 ### Dead locks
