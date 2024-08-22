@@ -81,6 +81,8 @@ https://postgres-locks.husseinnasser.com/
   <summary>How Locks Work in PostgreSQL</summary>
   <br/>
 
+  Locks in PostgreSQL are mechanisms used to control concurrency and prevent data inconsistencies. They ensure that multiple transactions can access and modify data without interfering with each other.
+
   In PostgreSQL, locks are acquired automatically by the database system whenever a transaction accesses or modified.
   
 </details>
