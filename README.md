@@ -103,5 +103,16 @@ https://postgres-locks.husseinnasser.com/
 </details>
 
 ### Row locks
+<details>
+  <summary>Type of locks</summary>
+  <br/>
+
+  + FOR KEY SHARE
+  + FOR SHARE
+  + FOR NO KEY UPDATE
+  + FOR UPDATE
+  
+</details>
+
 ### Page locks
 ### Dead locks
