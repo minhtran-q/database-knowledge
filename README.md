@@ -76,6 +76,7 @@
 
 ## Table locks - A deep dive
 
+https://postgres-locks.husseinnasser.com/
 <details>
   <summary>How Locks Work in PostgreSQL</summary>
   <br/>
