@@ -104,6 +104,14 @@ https://postgres-locks.husseinnasser.com/
 
 ### Row locks
 <details>
+  <summary>Row level lock</summary>
+  <br/>
+
+  These locks apply to individual rows within a table. They are used to prevent other transactions from modifying or deleting specific rows while they are being accessed.
+  
+</details>
+
+<details>
   <summary>Type of locks</summary>
   <br/>
 
