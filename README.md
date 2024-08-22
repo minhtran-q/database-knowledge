@@ -86,7 +86,7 @@
 </details>
 
 <details>
-  <summary>Locking Mechanisms:</summary>
+  <summary>Locking Mechanisms</summary>
   <br/>
 
   **Explicit Locking:** Manually acquiring and releasing locks using commands like `SELECT FOR UPDATE` and `SELECT FOR SHARE`.
