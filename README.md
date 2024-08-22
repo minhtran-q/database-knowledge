@@ -184,7 +184,7 @@ https://postgres-locks.husseinnasser.com/
   <summary>Page level lock</summary>
   <br/>
 
-  Page-level Locks are native to two types. **Share** & **Exclusive locks** limit read/write access to table pages. After a row is fetched or updated, these locks are immediately released.
+  Pagel locks are native to two types. **Share** & **Exclusive locks** limit read/write access to table pages. After a row is fetched or updated, these locks are immediately released.
 </details>
 
 
