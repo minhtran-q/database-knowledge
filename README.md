@@ -74,8 +74,8 @@
   
 </details>
 
-## Table locks - A deep dive
-
+## Locks in SQL - A deep dive
+### Table lock
 https://postgres-locks.husseinnasser.com/
 <details>
   <summary>How Locks Work in PostgreSQL</summary>
@@ -84,3 +84,6 @@ https://postgres-locks.husseinnasser.com/
   In PostgreSQL, locks are acquired automatically by the database system whenever a transaction accesses or modified.
   
 </details>
+### Row locks
+### Page locks
+### Dead locks
