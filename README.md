@@ -250,4 +250,4 @@ https://postgres-locks.husseinnasser.com/
 
 ### Dead locks
 
-## Isoldation level
+## Isolation level
