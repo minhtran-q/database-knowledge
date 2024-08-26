@@ -29,6 +29,23 @@
   
 </details>
 
+<details>
+  <summary>Clustered indexes</summary>
+  <br/>
+
+
+  _Note:_ Unlike some other databases where indexes can be clustered and directly affect the physical storage order of the data, in PostgreSQL, **indexes are always secondary**. This means that the index data is stored in a separate structure, and the index records contain pointers to the corresponding data rows in the main table.
+  
+</details>
+
+<details>
+  <summary>Non-clustered indexes</summary>
+  <br/>
+
+  
+  
+</details>
+
 ## Optimize performance
 <details>
   <summary>Avoid abusing SELECT DISTINCT</summary>
