@@ -249,3 +249,5 @@ https://postgres-locks.husseinnasser.com/
 </details>
 
 ### Dead locks
+
+## Isoldation level
