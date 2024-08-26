@@ -60,6 +60,56 @@
   _Non-clustered index._
 </details>
 
+<details>
+  <summary>How can you identify indexes that are not being used effectively?</summary>
+  <br/>
+
+  _In SQL Server_
+  + Use Dynamic Management Views sys.dm_db_index_usage_stats. This view provides details on how often an index is used for seeks, scans, lookups, and updates. If an index shows very low or zero usage, it might be a candidate for removal.
+  ```
+  SELECT 
+    OBJECT_NAME(S.[OBJECT_ID]) AS [Table Name],
+    I.[NAME] AS [Index Name],
+    USER_SEEKS, USER_SCANS, USER_LOOKUPS, USER_UPDATES
+  FROM 
+      SYS.DM_DB_INDEX_USAGE_STATS AS S
+      INNER JOIN SYS.INDEXES AS I ON I.[OBJECT_ID] = S.[OBJECT_ID] AND I.INDEX_ID = S.INDEX_ID
+  WHERE 
+      OBJECTPROPERTY(S.[OBJECT_ID],'IsUserTable') = 1
+      AND S.database_id = DB_ID();
+
+  ```
+  + Use Dynamic Management Views sys.dm_db_index_operational_stats, provides information on the operational aspects of indexes, such as insert, update, and delete operations.
+  ```
+  SELECT 
+      OBJECT_NAME(A.[OBJECT_ID]) AS [Table Name],
+      I.[NAME] AS [Index Name],
+      A.LEAF_INSERT_COUNT, A.LEAF_UPDATE_COUNT, A.LEAF_DELETE_COUNT
+  FROM 
+      SYS.DM_DB_INDEX_OPERATIONAL_STATS (DB_ID(), NULL, NULL, NULL) A
+      INNER JOIN SYS.INDEXES AS I ON I.[OBJECT_ID] = A.[OBJECT_ID] AND I.INDEX_ID = A.INDEX_ID
+  WHERE 
+      OBJECTPROPERTY(A.[OBJECT_ID],'IsUserTable') = 1;
+  ```
+_In MySQL_
++ Use the `INFORMATION_SCHEMA` tables to identify unused indexes.
+
+_In Postgres_
++ **pg_stat_user_indexes:** This view provides statistics about index usage. You can query it to find indexes that have low or zero usage.
+```
+SELECT 
+    schemaname, 
+    relname AS tablename, 
+    indexrelname AS indexname, 
+    idx_scan AS number_of_scans 
+FROM 
+    pg_stat_user_indexes 
+WHERE 
+    idx_scan = 0;
+```
+  
+</details>
+
 ## Optimize performance
 <details>
   <summary>Avoid abusing SELECT DISTINCT</summary>
