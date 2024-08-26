@@ -16,7 +16,7 @@
   <summary>How do indexes work?</summary>
   <br/>
 
-  
+  ![](images/indexed-table.png)
   
 </details>
 
