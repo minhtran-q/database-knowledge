@@ -157,8 +157,25 @@ WHERE
   <summary>Avoid SQL injection</summary>
   <br/>
 
-+ Use parameterized queries to prevent SQL injection attacks.
-  
+  _Problem:_
+  A web application with a login form where users enter their username and password. 
+
+  + Use parameterized queries to prevent SQL injection attacks. The application uses the following SQL query to check the credentials:
+  ```
+  SELECT * FROM users WHERE username = 'user_input' AND password = 'user_input';
+  ```
+  And attacker can use SQL injection to enter the following into the username field:
+  ```
+  ' OR '1'='1
+  ```
+  And the SQL would look like:
+  ```
+  SELECT * FROM users WHERE username = '' OR '1'='1' AND password = '';
+  ```
+  The condition `'1'='1'` is always true, so this query will reurn all rows from the `users` table.
+
+  _Solution:_
+  + Use parameterized queries to prevent SQL injection attacks.
 </details>
 
 <details>
