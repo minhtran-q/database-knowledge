@@ -140,6 +140,8 @@ WHERE
   <summary>Avoid abusing SELECT DISTINCT</summary>
   <br/>
   
+  `SELECT DISTINCT` can consumes a lot of resources. Should use appropriate joins and conditions to avoid `SELECT DISTINCT`.
+  
 </details>
 
 <details>
