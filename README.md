@@ -199,6 +199,14 @@ WHERE
 <details>
   <summary>Using NOT EXISTS instead of NOT IN</summary>
   <br/>
+
+  `NOT EXISTS`
+  + Generally performs better with large datasets. It stops processing as soon as it finds a match.
+  + Handle NULL value. It returns results even if there are NULLs in the subquery.
+  
+  `NOT IN`
+  + Can be slower, especially with large datasets, because it has to check all values in the list.
+  + If any value in the list is NULL, the entire result set will be empty.
   
 </details>
 
