@@ -6,7 +6,25 @@
   <summary>Understand how sql run</summary>
   <br/>
 
-   ![order_of_sql](/images/order_of_sql.png)
+  ![order_of_sql](/images/order_of_sql.png)
+  
+</details>
+
+### Indexes
+
+<details>
+  <summary>How do indexes work?</summary>
+  <br/>
+
+  
+  
+</details>
+
+<details>
+  <summary>trade-offs between creating an index and not creating an index</summary>
+  <br/>
+
+  
   
 </details>
 
@@ -199,5 +217,3 @@ https://postgres-locks.husseinnasser.com/
 </details>
 
 ### Dead locks
-
-## Indexes
