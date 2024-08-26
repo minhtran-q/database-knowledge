@@ -446,7 +446,9 @@ https://postgres-locks.husseinnasser.com/
   ```
   BEGIN TRANSACTION;
   UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+
   -- Waits for Transaction 2 to release the lock on AccountID = 2
+
   UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
   COMMIT;
   ```
@@ -455,7 +457,9 @@ https://postgres-locks.husseinnasser.com/
   ```
   BEGIN TRANSACTION;
   UPDATE Accounts SET Balance = Balance + 200 WHERE AccountID = 2;
+
   -- Waits for Transaction 1 to release the lock on AccountID = 1
+
   UPDATE Accounts SET Balance = Balance - 200 WHERE AccountID = 1;
   COMMIT;
   ```
