@@ -421,5 +421,48 @@ https://postgres-locks.husseinnasser.com/
 </details>
 
 ### Dead locks
+<details>
+  <summary>Simple case</summary>
+  <br/>
+
+  we have two tables: `Accounts` and `Transactions`.
+
+  ```
+  CREATE TABLE Accounts (
+    AccountID INT PRIMARY KEY,
+    Balance DECIMAL(10, 2)
+  );
+  
+  CREATE TABLE Transactions (
+      TransactionID INT PRIMARY KEY,
+      AccountID INT,
+      Amount DECIMAL(10, 2),
+      FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID)
+  );
+  ```
+
+  **Transaction 1:**
+
+  ```
+  BEGIN TRANSACTION;
+  UPDATE Accounts SET Balance = Balance - 100 WHERE AccountID = 1;
+  -- Waits for Transaction 2 to release the lock on AccountID = 2
+  UPDATE Accounts SET Balance = Balance + 100 WHERE AccountID = 2;
+  COMMIT;
+  ```
+
+  **Transaction 2:**
+  ```
+  BEGIN TRANSACTION;
+  UPDATE Accounts SET Balance = Balance + 200 WHERE AccountID = 2;
+  -- Waits for Transaction 1 to release the lock on AccountID = 1
+  UPDATE Accounts SET Balance = Balance - 200 WHERE AccountID = 1;
+  COMMIT;
+  ```
+
+  **Transaction 1** locks `AccountID = 1` and then tries to lock `AccountID = 2`.
+  **Transaction 2** locks `AccountID = 2` and then tries to lock `AccountID = 1`.
+
+</details>
 
 ## Isolation level
