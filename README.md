@@ -213,7 +213,19 @@ WHERE
 <details>
   <summary>Avoid arithmetic operators in the WHERE clause</summary>
   <br/>
-  
+
+  Using arithmetic operations in the WHERE clause can lead to performance issues because it may prevent the database from using indexes.
+
+  _Wrong:_
+  ```
+  SELECT * FROM Orders
+  WHERE OrderAmount - Discount > 100;
+  ```
+  _Correct:_
+  ```
+  SELECT * FROM Orders
+  WHERE OrderAmount > 100 + Discount;
+  ```
 </details>
 
 <details>
