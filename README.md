@@ -231,6 +231,18 @@ WHERE
 <details>
   <summary>Avoid Function on the WHERE clause</summary>
   <br/>
+
+  ```
+  SELECT * FROM Orders
+  WHERE SUBTRING(CustomerName) = 'JOHN DOE';
+  ```
+  In this query, the `SUBTRING` function is applied to the CustomerName column. This means the function must be executed for each row.
+
+  _Solution:_
+  ```
+  SELECT * FROM Orders
+  WHERE CustomerName LIKE 'F%';
+  ```
   
 </details>
 <details>
