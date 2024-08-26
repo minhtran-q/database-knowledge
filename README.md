@@ -181,6 +181,18 @@ WHERE
 <details>
   <summary>Avoid using implicit data type conversion</summary>
   <br/>
+
+  Implicit conversions occur when database automatically converts data from one type to another during query execution. This can lead to performance issues, and it can prevent the use of indexes.
+
+  _Wrong:_
+  ```
+  SELECT * FROM Sales WHERE OrderDate = '2023-08-26';
+  ```
+  _Correct:_
+  To avoid this, you should explicitly convert the VARCHAR to DATETIME:
+  ```
+  SELECT * FROM Sales WHERE OrderDate = CONVERT(DATETIME, '2023-08-26');
+  ```
   
 </details>
 
