@@ -460,8 +460,8 @@ https://postgres-locks.husseinnasser.com/
   COMMIT;
   ```
 
-  **Transaction 1** locks `AccountID = 1` and then tries to lock `AccountID = 2`.
-  **Transaction 2** locks `AccountID = 2` and then tries to lock `AccountID = 1`.
+  + **Transaction 1** locks `AccountID = 1` and then tries to lock `AccountID = 2`.
+  + **Transaction 2** locks `AccountID = 2` and then tries to lock `AccountID = 1`.
 
 </details>
 
