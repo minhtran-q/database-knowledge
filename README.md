@@ -268,6 +268,27 @@ WHERE
 <details>
   <summary>Use EXISTS over COUNT(*) to check if data exists</summary>
   <br/>
+
+  `EXISTS`: Stops processing as soon as it finds a matching row.
+  `COUNT(*)`: Counts all matching rows, which can be slower.
+
+  _Using `COUNT(*)`:_
+  ```
+  IF (SELECT COUNT(*) FROM Orders WHERE CustomerID = 123) > 0
+  BEGIN
+      PRINT 'Customer has orders';
+  END
+  ```
+  This query counts **all orders** for the customer.
+
+  _Using `EXISTS`:_
+  ```
+  IF EXISTS (SELECT 1 FROM Orders WHERE CustomerID = 123)
+  BEGIN
+      PRINT 'Customer has orders';
+  END
+  ```
+  This query **stops as soon as** it finds the first matching order.
   
 </details>
 <details>
