@@ -179,14 +179,6 @@ WHERE
 </details>
 
 <details>
-  <summary>Avoid using implicit data type conversion</summary>
-  <br/>
-
-+ Use parameterized queries to prevent SQL injection attacks.
-  
-</details>
-
-<details>
   <summary>Using NOT EXISTS instead of NOT IN</summary>
   <br/>
   
