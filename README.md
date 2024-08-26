@@ -179,6 +179,12 @@ WHERE
 </details>
 
 <details>
+  <summary>Avoid using implicit data type conversion</summary>
+  <br/>
+  
+</details>
+
+<details>
   <summary>Using NOT EXISTS instead of NOT IN</summary>
   <br/>
   
