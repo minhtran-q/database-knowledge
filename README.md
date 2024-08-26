@@ -120,6 +120,23 @@ WHERE
 
 ## Optimize performance
 <details>
+  <summary>Using explicit column names in SELECT</summary>
+  <br/>
+
+  + Selecting only the columns you need can improve query performance.
+  + It makes your query easier to read and understand.
+
+  _Wrong:_
+  ```
+  SELECT * FROM employees;
+  ```
+  _Correct:_
+  ```
+  SELECT employee_id, first_name, last_name, department FROM employees;
+  ```
+  
+</details>
+<details>
   <summary>Avoid abusing SELECT DISTINCT</summary>
   <br/>
   
