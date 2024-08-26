@@ -1,4 +1,4 @@
-# SQL Knowledge
+# Database Knowledge
 
 ## Fundamental
 
