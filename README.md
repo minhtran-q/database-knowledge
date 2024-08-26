@@ -45,8 +45,11 @@
   <summary>Non-clustered indexes</summary>
   <br/>
 
+  A non-clustered index is an index structure that is separate from the actual data stored in a table. Unlike a clustered index, a non-clustered index creates a logical order for data rows and includes pointers to the actual data rows.
+
+  ![](images/indexed-table.png)
   
-  
+  _Non-clustered index._
 </details>
 
 ## Optimize performance
