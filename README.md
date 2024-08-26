@@ -14,6 +14,14 @@
 ### Indexes
 
 <details>
+  <summary>What is an index in a database?</summary>
+  <br/>
+
+  An index in a database is a data structure. It works similarly to an index in a book, allowing the database to quickly locate and access the data without scanning the entire table.
+  
+</details>
+
+<details>
   <summary>How do indexes work?</summary>
   <br/>
 
