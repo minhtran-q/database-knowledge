@@ -25,7 +25,15 @@
   <summary>Trade-offs between creating an index and not creating an index</summary>
   <br/>
 
-  
+  **Advantages:**
+  + Improved Query Performance
+  + Faster Sorting and Searching
+  + Enhanced Join Performance
+    
+  **Disadvantages:**
+  + Increased Storage Requirements
+  + Slower Data Modification
+  + Regular Maintenance
   
 </details>
 
