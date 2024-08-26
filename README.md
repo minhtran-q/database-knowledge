@@ -33,8 +33,9 @@
   <summary>Clustered indexes</summary>
   <br/>
 
-  + Cluster index is a type of index which sorts the data rows in the table on their key values. A table can have **only one clustered index**. 
-  + If a table already has a _primary key_, which by default creates a clustered index, you **cannot** create another clustered index on **the same table**.
+  + Cluster index is a type of index which sorts the data rows in the table on their key values. A table can have _**only one clustered index**_. 
+  + If a table already has a _primary key_, which by default creates a clustered index, you _**cannot**_ create another clustered index on _**the same table**_.
+  + When you insert **_a new record_** into a table with _**a clustered index**_, the database engine will immediately place the new record in the correct position according to the clustered index.
 
   _Note:_ Unlike some other databases where indexes can be clustered and directly affect the physical storage order of the data, in PostgreSQL, **indexes are always secondary**. This means that the index data is stored in a separate structure, and the index records contain pointers to the corresponding data rows in the main table.
   
