@@ -249,6 +249,21 @@ WHERE
   <summary>Use JOINS instead of Subqueries</summary>
   <br/>
   
+  _Subquery:_
+  ```
+  SELECT OrderID, OrderDate, TotalAmount
+  FROM Orders
+  WHERE CustomerID IN (SELECT CustomerID FROM Customers WHERE Country = 'USA');
+  ```
+
+  _`JOIN:`_
+  ```
+  SELECT Orders.OrderID, Orders.OrderDate, Orders.TotalAmount
+  FROM Orders
+  INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+  WHERE Customers.Country = 'USA';
+  ```
+
 </details>
 <details>
   <summary>Use EXISTS over COUNT(*) to check if data exists</summary>
