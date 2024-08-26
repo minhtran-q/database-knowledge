@@ -198,5 +198,6 @@ https://postgres-locks.husseinnasser.com/
   Pagel locks are native to two types. **Share** & **Exclusive locks** limit read/write access to table pages. After a row is fetched or updated, these locks are immediately released.
 </details>
 
-
 ### Dead locks
+
+## Indexes
