@@ -6,6 +6,7 @@
   <summary>Understand how sql run</summary>
   <br/>
 
+  If the search were presented visually, it would look like this:
   ![order_of_sql](/images/order_of_sql.png)
   
 </details>
