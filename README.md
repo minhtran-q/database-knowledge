@@ -22,6 +22,19 @@
 </details>
 
 <details>
+  <summary>Type of Indexes</summary>
+  <br/>
+
+  _PostgreSQL:_
+
+  + **B-tree (default):** It’s used for comparisons like `<` _(Less than)_, `<=` _(Less than or equal to)_, `=` _(Equal to)_, `>=` _(Greater than or equal to)_, `>` _(Greater than)_, and for pattern matching with `LIKE` and `~` _(tilde)_ when the pattern is anchored at the beginning.
+  + **Hash:** Suitable for simple equality comparisons (=).
+  + **GIN (Generalized Inverted Index):**  Best for columns containing multiple values, such as arrays, JSONB, ...
+  + **BRIN (Block Range INdex):** Efficient for very large tables with a linear sort order, such as time-series data.
+  
+</details>
+
+<details>
   <summary>How do indexes work?</summary>
   <br/>
 
