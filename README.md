@@ -14,15 +14,21 @@
 ### Joins
 
 <details>
-  <summary>Explain the difference between INNER JOIN and OUTER JOIN.</summary>
+  <summary>Explain the difference between INNER JOIN and OUTER JOIN</summary>
   <br/>
 
-  `INNER JOIN`: Returns only the rows that have matching values in both tables.
-  `OUTER JOIN`: Returns **all the rows from one** table and the **matched rows from the second** table. If there is no match, the result is **NULL**.
+  + `INNER JOIN`: Returns only the rows that have matching values in both tables.
+  + `OUTER JOIN`: Returns **all the rows from one** table and the **matched rows from the second** table. If there is no match, the result is **NULL**.
   
 </details>
 
+<details>
+  <summary>What are the different types of OUTER JOINs</summary>
+  <br/>
 
+  ![](images/inner-joins-and-outer-joins-in-sql.png)
+  
+</details>
 
 ### Indexes
 
