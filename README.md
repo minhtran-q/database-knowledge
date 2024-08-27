@@ -147,7 +147,6 @@ WHERE
 <details>
   <summary>Use index</summary>
   <br/>
-
 + Identify columns used frequently in WHERE, JOIN, and ORDER BY clauses, and create indexes can improve query performance.
 + Script used to identify missing indexes.
   
@@ -156,7 +155,6 @@ WHERE
 <details>
   <summary>Avoid SQL injection</summary>
   <br/>
-
   _Problem:_
   A web application with a login form where users enter their username and password. 
 
