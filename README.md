@@ -150,6 +150,36 @@ WHERE
   
 </details>
 
+### Isolation level
+
+<details>
+  <summary>Summary table</summary>
+  <br/>
+
+  | Isolation Level   | Dirty Read   | Non-repeatable Read | Phantom Read | Serialization Anomaly |
+  |-------------------|--------------|---------------------|--------------|-----------------------|
+  | Read Committed    | Not possible | Possible            | Possible     | Possible              |
+  | Repeatable Read   | Not possible | Not possible        | Possible     | Possible              |
+  | Serializable      | Not possible | Not possible        | Not possible | Not possible          |
+  
+</details>
+
+<details>
+  <summary>Read Committed</summary>
+  <br/>
+  
+</details>
+<details>
+  <summary>Repeatable Read</summary>
+  <br/>
+  
+</details>
+<details>
+  <summary>Serializable</summary>
+  <br/>
+  
+</details>
+
 ## Optimize performance
 <details>
   <summary>Using explicit column names in SELECT</summary>
@@ -166,7 +196,6 @@ WHERE
   ```
   SELECT employee_id, first_name, last_name, department FROM employees;
   ```
-  
 </details>
 <details>
   <summary>Avoid abusing SELECT DISTINCT</summary>
@@ -498,8 +527,6 @@ https://postgres-locks.husseinnasser.com/
   + **Transaction 2** locks `AccountID = 2` and then tries to lock `AccountID = 1`.
 
 </details>
-
-## Isolation level
 
 ## Data migration
 ### Flyway
