@@ -165,6 +165,31 @@ WHERE
 </details>
 
 <details>
+  <summary>Read Uncommitted</summary>
+  <br/>
+
+  **Dirty Read:**
+
+  + _Transaction A_ updates the status of an account but hasn’t committed yet.
+  + _Transaction B_ reads the updated status before _Transaction A_ commits.
+
+  ```
+  -- Transaction A
+  BEGIN;
+  UPDATE account SET status = 'inactive' WHERE id = '123e4567-e89b-12d3-a456-426614174000';
+  
+  -- Transaction B
+  BEGIN;
+  SELECT status FROM account WHERE id = '123e4567-e89b-12d3-a456-426614174000'; -- Reads 'inactive'
+  ```
+  _If Transaction A rolls back, Transaction B has read an invalid status._
+  
+  Solution:
+  + **Read Committed** isolation level prevents dirty reads by ensuring that only _committed_ data is read.
+  
+</details>
+
+<details>
   <summary>Read Committed</summary>
   <br/>
   
