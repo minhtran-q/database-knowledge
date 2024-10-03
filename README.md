@@ -165,10 +165,10 @@ WHERE
   + **Consistency**
     + Ensures that a transaction transform the database from one valid state to another.
     + _Example:_ If a transaction violates a database constraint (like a foreign key constraint), it will be rolled back to maintain consistency.
-  + **Isolation:**
+  + **Isolation**
     + Ensures that the operations of a transaction are isolated from those of other transactions.
     + _Example:_ If two transactions are updating the same account balance, isolation ensures that each transaction sees a consistent view of the data.
-  + **Durability:**
+  + **Durability**
     + Ensures that once a transaction is committed, its changes are permanent.
     + _Example:_ After a transaction commits a bank transfer, the changes to the account balances are permanent 
   
