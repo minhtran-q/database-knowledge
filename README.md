@@ -290,6 +290,7 @@ WHERE
 </details>
 
 ## Optimize performance
+### Query
 <details>
   <summary>Using explicit column names in SELECT</summary>
   <br/>
@@ -474,6 +475,10 @@ WHERE
   <br/>
   
 </details>
+
+### Indexing Strategies
+### Database Tuning and Configuration
+### Scaling Strategies
 
 ## Locks in SQL - A deep dive
 <details>
