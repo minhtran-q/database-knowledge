@@ -150,17 +150,39 @@ WHERE
   
 </details>
 
-### Isolation level
+### Transaction
 
 <details>
-  <summary>Summary table</summary>
+  <summary>What is transaction</summary>
   <br/>
+
+  
+  
+</details>
+
+<details>
+  <summary>Isolation levels</summary>
+  <br/>
+
+  Isolation and read phenomena are fundamental concepts in database systems that ensure data consistency in concurrent environments. Higher isolation levels prevent more read phenomena.
 
   | Isolation Level   | Dirty Read   | Non-repeatable Read | Phantom Read | Serialization Anomaly |
   |-------------------|--------------|---------------------|--------------|-----------------------|
+  | Read Uncommitted  | Possible     | Possible            | Possible     | Possible              |
   | Read Committed    | Not possible | Possible            | Possible     | Possible              |
   | Repeatable Read   | Not possible | Not possible        | Possible     | Possible              |
   | Serializable      | Not possible | Not possible        | Not possible | Not possible          |
+
+  **Read Phenomena**
+  + **Dirty read:** A transaction reads data that has been modified by another transaction but not yet committed. This can lead to inconsistent results.
+  + **Non-repeatable read**: A transaction reads the same data multiple times and gets different results due to changes made by another committed transaction.
+  + **Phantom read:**
+
+  **isolation levels**
+  + **Read uncommitted:** Allows dirty reads.
+  + **Read committed:** Prevents dirty reads but allows non-repeatable reads and phantom reads.
+  + **Repeatable Read:** Prevents dirty and non-repeatable reads but allows phantom reads.
+  + **Serializable:** Prevents all three phenomena, ensuring complete isolation.
   
 </details>
 
@@ -186,7 +208,7 @@ WHERE
   ```
   + If _Transaction A_ rolls back, _Transaction B_ has read an invalid status.
   
-  Solution:
+  **Solution:**
   + **Read Committed** isolation level prevents dirty reads by ensuring that only _committed_ data is read.
   
 </details>
@@ -194,16 +216,62 @@ WHERE
 <details>
   <summary>Read Committed</summary>
   <br/>
+
+  **Non-Repeatable Read:**
+
+  ![](images/non-repeatable_read.png)
+
+  + _Transaction A_ reads the status of an account.
+  + _Transaction B_ updates the status of the same account and commits.
+  + _Transaction A_ reads the status again and sees a different value.
+
+  ```
+  -- Transaction A
+  BEGIN;
+  SELECT status FROM account WHERE id = '123e4567-e89b-12d3-a456-426614174000'; -- Reads 'active'
+  
+  -- Transaction B
+  BEGIN;
+  UPDATE account SET status = 'inactive' WHERE id = '123e4567-e89b-12d3-a456-426614174000';
+  COMMIT;
+  
+  -- Transaction A
+  SELECT status FROM account WHERE id = '123e4567-e89b-12d3-a456-426614174000'; -- Reads 'inactive'
+  ```
+  
+  + _Transaction A_ sees different values for the same row.
+
+  **Solution:** 
+  + **Repeatable Read** isolation level prevents non-repeatable reads by ensuring that if a row is read twice in the same transaction, it will have the same value.
   
 </details>
 <details>
   <summary>Repeatable Read</summary>
   <br/>
+
+  **Phantom Read:**
+
+  + _Transaction A_ reads a set of rows that match a condition.
+  + _Transaction B_ inserts a new row that matches the same condition and commits.
+  + _Transaction A_ re-reads the rows and sees the new row.
+
+  ```
+  -- Transaction A
+  BEGIN;
+  SELECT * FROM account WHERE status = 'active'; -- Reads 10 rows
   
-</details>
-<details>
-  <summary>Serializable</summary>
-  <br/>
+  -- Transaction B
+  BEGIN;
+  INSERT INTO account (id, status) VALUES ('123e4567-e89b-12d3-a456-426614174001', 'active');
+  COMMIT;
+  
+  -- Transaction A
+  SELECT * FROM account WHERE status = 'active'; -- Reads 11 rows
+  ```
+  + _Transaction A_ sees a different set of rows on re-reading.
+
+  **Solution:**
+  + Serializable isolation level prevents phantom reads by ensuring that no other transactions can insert, update, or delete rows that would affect the result set of the current transaction.
   
 </details>
 
