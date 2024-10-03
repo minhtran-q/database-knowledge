@@ -156,7 +156,21 @@ WHERE
   <summary>What is transaction</summary>
   <br/>
 
-  
+  A transaction in the context of databases is a sequence of one or more SQL operations executed as a single unit of work.
+
+  **Characteristics of Transactions:**
+  + **Atomicity**
+    + Ensures that all operations within a transaction are completed successfully. If any operation fails, the entire transaction is rolled back.
+    + _Example:_ If a transaction involves transferring money from one account to another, both the debit and credit operations must succeed or fail together.
+  + **Consistency**
+    + Ensures that a transaction transform the database from one valid state to another.
+    + _Example:_ If a transaction violates a database constraint (like a foreign key constraint), it will be rolled back to maintain consistency.
+  + **Isolation:**
+    + Ensures that the operations of a transaction are isolated from those of other transactions.
+    + _Example:_ If two transactions are updating the same account balance, isolation ensures that each transaction sees a consistent view of the data.
+  + **Durability:**
+    + Ensures that once a transaction is committed, its changes are permanent.
+    + _Example:_ After a transaction commits a bank transfer, the changes to the account balances are permanent 
   
 </details>
 
