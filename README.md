@@ -271,7 +271,7 @@ WHERE
   + _Transaction A_ sees a different set of rows on re-reading.
 
   **Solution:**
-  + Serializable isolation level prevents phantom reads by ensuring that no other transactions can insert, update, or delete rows that would affect the result set of the current transaction.
+  + **Serializable** isolation level prevents phantom reads by ensuring that no other transactions can insert, update, or delete rows that would affect the result set of the current transaction.
   
 </details>
 
