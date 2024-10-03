@@ -170,7 +170,7 @@ WHERE
     + _Example:_ If two transactions are updating the same account balance, isolation ensures that each transaction sees a consistent view of the data.
   + **Durability**
     + Ensures that once a transaction is committed, its changes are permanent.
-    + _Example:_ After a transaction commits a bank transfer, the changes to the account balances are permanent 
+    + _Example:_ After a transaction commits a bank transfer, the changes to the account balances are permanent.
   
 </details>
 
@@ -190,7 +190,7 @@ WHERE
   **Read Phenomena**
   + **Dirty read:** A transaction reads data that has been modified by another transaction but not yet committed. This can lead to inconsistent results.
   + **Non-repeatable read**: A transaction reads the same data multiple times and gets different results due to changes made by another committed transaction.
-  + **Phantom read:**
+  + **Phantom read:** Occurs when a transaction reads a set of rows that satisfy a condition, but another transaction inserts or deletes rows that satisfy the same condition, because the first transaction to see a different set of rows if it re-reads.
 
   **isolation levels**
   + **Read uncommitted:** Allows dirty reads.
