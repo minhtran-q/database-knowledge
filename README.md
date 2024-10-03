@@ -184,7 +184,7 @@ WHERE
   BEGIN;
   SELECT status FROM account WHERE id = '123e4567-e89b-12d3-a456-426614174000'; -- Reads 'inactive'
   ```
-  _If Transaction A rolls back, Transaction B has read an invalid status._
+  + If Transaction A rolls back, Transaction B has read an invalid status.
   
   Solution:
   + **Read Committed** isolation level prevents dirty reads by ensuring that only _committed_ data is read.
