@@ -170,6 +170,8 @@ WHERE
 
   **Dirty Read:**
 
+  ![](images/drity_read.png)
+
   + _Transaction A_ updates the status of an account but hasn’t committed yet.
   + _Transaction B_ reads the updated status before _Transaction A_ commits.
 
