@@ -290,6 +290,28 @@ WHERE
 </details>
 
 ## Optimize performance
+
+<details>
+  <summary>Checklist to optimize database performance</summary>
+  <br/>
+
+  + **Query**
+    + Select only the necessary data to reduce query execution time.
+    + Avoid select distenct.
+    + Using NOT EXISTS instead of NOT IN.
+    + Use EXISTS over COUNT(*) to check if data exists.
+    + Avoid unnecessary join.
+  + **Indexing**
+    + Create indexes on frequently queried columns.
+  + **Database Tuning and Configuration:**
+    + With large data, use partition to separate the big table to smaller tables. 
+  + **Scaling Strategies**
+    + Upgrade hardware resources like CPU and RAM.
+  + Analysis
+    + Use explain command to analyze query performance
+    + With `Postgres`, query pg_stat_user_indexes table to check statistics about index usage.
+</details>
+
 ### Query
 <details>
   <summary>Using explicit column names in SELECT</summary>
@@ -476,7 +498,6 @@ WHERE
   
 </details>
 
-### Indexing Strategies
 ### Database Tuning and Configuration
 ### Scaling Strategies
 
