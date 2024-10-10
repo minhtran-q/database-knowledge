@@ -499,6 +499,54 @@ WHERE
 </details>
 
 ### Partition
+
+<details>
+  <summary>Steps to Partition a Table in PostgreSQL</summary>
+  <br/>
+
+  There are three partitioning method:
+
+  + **Range Partitioning:** Divides the table based on a range of values, often used with date fields.
+  + **List Partitioning:** Divides the table based on a list of specific values.
+  + **Hash Partitioning:** Uses a hash function on the partition key to distribute rows across partitions.
+
+  Define the main table that will be partitioned.
+
+  ```
+  CREATE TABLE sales (
+      id SERIAL PRIMARY KEY,
+      sale_date DATE NOT NULL,
+      amount NUMERIC
+  ) PARTITION BY RANGE (sale_date);
+  ```
+
+  **Define the partitions for the main table.**
+
+  ```
+  CREATE TABLE sales_2023 PARTITION OF sales
+  FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
+  
+  CREATE TABLE sales_2024 PARTITION OF sales
+  FOR VALUES FROM ('2024-01-01') TO ('2025-01-01');
+  ```
+
+  Insert data into the main table, and PostgreSQL will automatically route it to the correct partition.
+
+  ```
+  SELECT * FROM sales WHERE sale_date BETWEEN '2023-01-01' AND '2023-12-31';
+  ```
+
+  You can create indexes on individual partitions to further optimize query performance.
+
+  ```
+  CREATE INDEX idx_sales_2023_amount ON sales_2023 (amount);
+  ```
+
+  Note: If you don’t query on the partition column, PostgreSQL will perform a full scan of all partitions. 
+  
+</details>
+
+
 ### Scaling Strategies
 
 ## Locks in SQL - A deep dive
