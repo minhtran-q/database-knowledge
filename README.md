@@ -498,7 +498,7 @@ WHERE
   
 </details>
 
-### Database Tuning and Configuration
+### Partition
 ### Scaling Strategies
 
 ## Locks in SQL - A deep dive
