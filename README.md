@@ -27,6 +27,11 @@
   <br/>
 
   ![](images/inner-joins-and-outer-joins-in-sql.png)
+
+  _Note:_ 
+  + `LEFT JOIN` is also refered to as `OUTER LEFT JOIN`. 
+  + `RIGHT JOIN` is also refered to as `OUTER RIGHT JOIN`. 
+  + `FULL OUTER JOIN` is also refered to as `OUTER JOIN`.
   
 </details>
 
