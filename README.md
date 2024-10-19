@@ -74,7 +74,7 @@
 
   **The difference between indexing only column A, only column B**
 
-  _+ Indexing only column A_
+  + _Indexing only column A_
 
   When you create an index on only **column A**, the database can use this index to optimize queries when involved **column A** in the `WHERE`, `ORDER BY`, or `GROUP BY` clauses.
 
@@ -89,7 +89,7 @@
   ```
   the index on **column A** to filter by **A** first, but filtering by **B** will not be optimized.
   
-  _+ Indexing only column B_
+  + _Indexing only column B_
 
   When you create an index on only **column B**, the database can quickly locate rows where **B** matches
   ```
