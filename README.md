@@ -87,7 +87,7 @@
   ```
   SELECT * FROM table WHERE A = 10 AND B = 20;
   ```
-  the index on column A to filter by A first, but filtering by B will not be optimized.
+  the index on **column A** to filter by **A** first, but filtering by **B** will not be optimized.
   
   _Indexing only column B_
 
@@ -99,11 +99,11 @@
   ```
   SELECT * FROM table WHERE A = 10 AND B = 20;
   ```
-  The filtering on column A separately after retrieving the rows for B, leading to less efficient query performance.
+  The filtering on **column A** separately after retrieving the rows for **B**, leading to less efficient query performance.
 
   **Indexing both columns A and B (composite index)**
 
-  When you create a composite index on both columns A and B, you optimize queries that involve both columns. With column A being the first level of filtering and column B being the second.
+  When you create a composite index on both **columns A and B**, you optimize queries that involve both columns. With **column A** being the first level of filtering and **column B** being the second.
 
   ```
   SELECT * FROM table WHERE A = 10 AND B = 20;
