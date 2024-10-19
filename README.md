@@ -119,6 +119,11 @@
   SELECT * FROM table WHERE B = 20;
   ```
   Because the index is ordered with A first, queries that filter only B won’t benefit.
+
+  Tips:
+  + If you frequently query both A and B together, use a composite index on (A, B).
+  + If you often query A alone, the composite index on (A, B) will still be helpful.
+  + If you frequently query B alone, consider a separate index on column B or adjust your indexing strategy based on query patterns.
   
 </details>
 
