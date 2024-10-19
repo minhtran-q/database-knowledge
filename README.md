@@ -35,6 +35,12 @@
   
 </details>
 
+<details>
+  <summary>CROSS JOIN vs FULL JOIN</summary>
+  <br/>
+  
+</details>
+
 ### Indexes
 
 <details>
