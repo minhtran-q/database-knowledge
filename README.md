@@ -87,6 +87,38 @@
   ```
   SELECT * FROM table WHERE A = 10 AND B = 20;
   ```
+  the index on column A to filter by A first, but filtering by B will not be optimized.
+  
+  _Indexing only column B_
+
+  When you create an index on only **column B**, the database can quickly locate rows where **B** matches
+  ```
+  SELECT * FROM table WHERE B = 20;
+  ```
+  If you filter on **column A** or on both **columns A and B**, the index on only **column B** won’t help with filtering by **A**.
+  ```
+  SELECT * FROM table WHERE A = 10 AND B = 20;
+  ```
+  The filtering on column A separately after retrieving the rows for B, leading to less efficient query performance.
+
+  **Indexing both columns A and B (composite index)**
+
+  When you create a composite index on both columns A and B, you optimize queries that involve both columns. With column A being the first level of filtering and column B being the second.
+
+  ```
+  SELECT * FROM table WHERE A = 10 AND B = 20;
+  ```
+  The composite index on (A, B) will allow the database to directly find the rows `WHERE` both A and B match the conditions.
+
+  Additionally, this index can still be used for queries that only filter on **column A**
+  ```
+  SELECT * FROM table WHERE A = 10;
+  ```
+  However, it will not be as useful for queries that only filter on **column B**
+  ```
+  SELECT * FROM table WHERE B = 20;
+  ```
+  Because the index is ordered with A first, queries that filter only B won’t benefit.
   
 </details>
 
