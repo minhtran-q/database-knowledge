@@ -63,6 +63,30 @@
   <br/>
 
   ![](images/indexed-table.png)
+
+</details>
+
+<details>
+  <summary>Composite index</summary>
+  <br/>
+
+  Select column A, B from a table.
+
+  **The difference between indexing only column A, only column B**
+
+  _Indexing only column A_
+
+  When you create an index on only **column A**, the database can use this index to optimize queries when involved **column A** in the `WHERE`, `ORDER BY`, or `GROUP BY` clauses.
+
+  ```
+  SELECT * FROM table WHERE A = 10;
+  ```
+
+  However, if you query using **column B** or both **columns A and B**, the index on only **column A** will not help with filtering on **column B**
+
+  ```
+  SELECT * FROM table WHERE A = 10 AND B = 20;
+  ```
   
 </details>
 
