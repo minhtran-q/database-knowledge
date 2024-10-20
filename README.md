@@ -139,10 +139,12 @@
   <summary>Clustered indexes</summary>
   <br/>
 
-  + Cluster index is a type of index which sorts the data rows in the table on their key values. A table can have _**only one clustered index**_. 
-  + If a table already has a _primary key_, which by default creates a clustered index, you _**cannot**_ create another clustered index on _**the same table**_.
-  + When you insert **_a new record_** into a table with _**a clustered index**_, the database engine will immediately place the new record in the correct position according to the clustered index.
-
+  + **Physical Ordering:** The table rows are physically stored in the order by the clustered index. For example, if we create a clustered index on the `ID` column, the table rows will be stored in _ascending_ or _descending_ order by the `ID` values.
+  + **Only One Per Table:** A table can have only one clustered index. (because the data can only be physically ordered in one way).
+  + **Primary Key:** Often, the primary key of a table is used as the clustered index by default, although this is _not mandatory_.
+  + **Faster Access:** Since the rows are stored in the index order, selecting rows based on ranges of indexed values is much faster compared to non-clustered indexes.
+  + **Drawbacks:** The downside of a clustered index is that inserting, updating or deleting rows can be slower.
+  
   _Note:_ Unlike some other databases where indexes can be clustered and directly affect the physical storage order of the data, in PostgreSQL, **indexes are always secondary**. This means that the index data is stored in a separate structure, and the index records contain pointers to the corresponding data rows in the main table.
   
 </details>
@@ -151,11 +153,27 @@
   <summary>Non-clustered indexes</summary>
   <br/>
 
-  A non-clustered index is an index structure that is separate from the actual data stored in a table. Unlike a clustered index, a non-clustered index creates a logical order for data rows and includes pointers to the actual data rows.
+  + A non-clustered index is an index structure that is separate from the actual data stored in a table. Unlike a clustered index, a non-clustered index creates a logical order for data rows and includes pointers to the actual data rows.
+  + It does not change the physical storage of the table.
+  + A table can have multiple non-clustered indexes. because these indexes are separate from the actual table data.
 
   ![](images/indexed-table.png)
   
   _Non-clustered index._
+</details>
+
+<details>
+  <summary>Clustered indexes vs Non-clustered indexes</summary>
+  <br/>
+
+  **Clustered indexes**
+  + Faster for range queries and queries that return data in the order of the index.
+  + Slower for updates/inserts/deletes, they require rearranging the rows to maintain the order of the clustered index.
+
+  **Non-Clustered Index:**
+  + Faster to search for exact values (e.g., `SELECT * FROM table WHERE LastName = 'Smith'`), but generally slower for range queries compared to a clustered index.
+  + Inserting, updating, or deleting rows has less impact on the overall physical table structure
+
 </details>
 
 <details>
