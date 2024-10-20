@@ -14,30 +14,16 @@
 ### Joins
 
 <details>
-  <summary>Explain the difference between INNER JOIN and OUTER JOIN</summary>
-  <br/>
-
-  + `INNER JOIN`: Returns only the rows that have matching values in both tables.
-  + `OUTER JOIN`: Returns **all the rows from one** table and the **matched rows from the second** table. If there is no match, the result is **NULL**.
-  
-</details>
-
-<details>
-  <summary>What are the different types of OUTER JOINs</summary>
+  <summary>Explain the difference between JOINS</summary>
   <br/>
 
   ![](images/inner-joins-and-outer-joins-in-sql.png)
 
-  _Note:_ 
-  + `LEFT JOIN` is also refered to as `OUTER LEFT JOIN`. 
-  + `RIGHT JOIN` is also refered to as `OUTER RIGHT JOIN`. 
-  + `FULL OUTER JOIN` is also refered to as `OUTER JOIN`.
-  
-</details>
-
-<details>
-  <summary>CROSS JOIN vs FULL JOIN</summary>
-  <br/>
+  + `INNER JOIN`: Returns the rows that have matching values in _both_ tables.
+  + `LEFT JOIN` (`LEFT OUTER JOIN`): Return all records from the _left_ table and the matching records from the _right_ table. If no match is found, `NULL` values are returned for columns from the _right_ table.
+  + `RIGHT JOIN` (`RIGHT OUTER JOIN`): Return all records from the _right_ table and the matching records from the _left_ table. If no match is found, `NULL` values are returned for columns from the _left_ table.
+  + `FULL JOIN` (`OUTER JOIN`, `FULL OUTER JOIN`): Returns all records that have matching values in _both_ tables. With records no match, it will return `NULL` value.
+  + `CROSS JOIN`: Every row from _left_ table is paired with every row from _right_ table.
   
 </details>
 
