@@ -663,13 +663,9 @@ https://postgres-locks.husseinnasser.com/
   <br/>
 
   Table locks apply to entire tables and are used to prevent other transactions from accessing the table in conflicting ways.
+
+  **Type of locks:**
   
-</details>
-
-<details>
-  <summary>Type of locks</summary>
-  <br/>
-
   + AccessShareLock
   + RowShareLock
   + RowExclusiveLock
