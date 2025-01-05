@@ -239,7 +239,7 @@ WHERE
     + Ensures that all operations within a transaction are completed successfully. If any operation fails, the entire transaction is rolled back.
     + _Example:_ If a transaction involves transferring money from one account to another, both the debit and credit operations must succeed or fail together.
   + **Consistency**
-    + Ensures that a transaction transform the database from one valid state to another.
+    + Ensures that a transaction transforms the database from one valid state to another.
     + _Example:_ If a transaction violates a database constraint (like a foreign key constraint), it will be rolled back to maintain consistency.
   + **Isolation**
     + Ensures that the operations of a transaction are isolated from those of other transactions.
@@ -247,7 +247,27 @@ WHERE
   + **Durability**
     + Ensures that once a transaction is committed, its changes are permanent.
     + _Example:_ After a transaction commits a bank transfer, the changes to the account balances are permanent.
-  
+   
+  _Example with payment context_
+
+  + **Atomicity**:
+  Suppose we have two bank accounts: Account A and Account B. A user initiates a transaction to transfer $100 from Account A to Account B.
+    + Step 1: Deduct $100 from Account A
+    + Step 2: Add $100 to Account B
+  Two operations must succeed or fail together.
+  + **Consistency**:
+  Suppose we have two bank accounts: Account A ($500) and Account B ($300). Total $800
+    + When deduct $200 from Account A
+    + And add $200 to account B 
+  Total funds in two accounts unchanged.
+  + **Isolation**
+  Suppose we have a balance ($100)
+    + Person A init a transaction deduct $100.
+    + Then person B init a transaction to deduct $100 from the same account.
+    + The isolation concept ensures that the transactions do not interfere with each other.
+  + **Durability**
+  After a transaction commits a bank transfer, the changes to the account balances can not be rolled back.
+    
 </details>
 
 <details>
